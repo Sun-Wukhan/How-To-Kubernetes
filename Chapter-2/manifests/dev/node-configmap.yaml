@@ -1,0 +1,11 @@
+kind: ConfigMap
+apiVersion: v1
+metadata:
+  name: cm
+  namespace: default
+data:
+   NODE_ENV: "development"
+   PORT: "4000"
+   MONGO_URL: "mongodb+srv://admin:admin@landr-cluster.gevrg6p.mongodb.net/Landr-App?retryWrites=true&w=majority"
+   GOOGLE_CLIENT_ID: "183874833504-ubm29pq7ac8916i0ue4ntd13d9sthotr.apps.googleusercontent.com"
+   GOOGLE_CLIENT_SECRET: "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"

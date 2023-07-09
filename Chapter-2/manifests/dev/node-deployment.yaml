@@ -1,0 +1,23 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: my-node-app
+  namespace: default  # Replace with your desired namespace
+spec:
+  replicas: 2  # Number of instances you want to run
+  selector:
+    matchLabels:
+      app: my-node-app
+  template:
+    metadata:
+      labels:
+        app: my-node-app
+    spec:
+      containers:
+        - name: my-node-app
+          image: sunwukhan/my-node-app:latest  # Replace with your actual Docker image and tag
+          ports:
+            - containerPort: 4000  # Update with the port your Node.js application listens on
+          envFrom:
+            - configMapRef:
+                name: cm  # Replace with the name of your ConfigMap
